@@ -112,6 +112,13 @@ header nav ul li a:hover {
   overflow: hidden;
 }
 
+.producto-card .descripcion.expandida {
+  -webkit-line-clamp: unset;
+  display: block;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
 .producto-card .ver-mas {
   color: #1E90FF;
   font-size: 14px;
