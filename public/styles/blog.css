@@ -74,8 +74,8 @@ header nav ul li a:hover {
 }
 
 .blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 20px;
   padding: 20px 0;
 }
@@ -85,7 +85,9 @@ header nav ul li a:hover {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s;
-  text-align: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .blog-post:hover {
@@ -93,9 +95,16 @@ header nav ul li a:hover {
 }
 
 .blog-post img {
-  width: 100%;
+  width: 200px;
   height: auto;
   border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .blog-post .fecha {
