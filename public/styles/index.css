@@ -1,0 +1,204 @@
+/* Reset de márgenes y padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Header */
+header {
+  background-color: #222;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 36px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav ul li a:hover {
+  color: #00C9FF;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero .btn-primary {
+  background-color: #00C9FF;
+  padding: 10px 20px;
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.hero .btn-primary:hover {
+  background-color: #00a7cc;
+}
+
+/* Productos */
+.productos {
+  padding: 40px 0;
+  background-color: #222;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.producto-card {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.producto-card:hover {
+  transform: translateY(-10px);
+}
+
+.producto-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.producto-card h3 {
+  margin: 20px 0;
+}
+
+.producto-card .precio {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.producto-card .btn-secundario {
+  background-color: #00C9FF;
+  padding: 10px 20px;
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.producto-card .btn-secundario:hover {
+  background-color: #00a7cc;
+}
+
+/* Ofertas */
+.ofertas {
+  background-color: #111;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.ofertas .btn-primary {
+  background-color: #00C9FF;
+  padding: 10px 20px;
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.ofertas .btn-primary:hover {
+  background-color: #00a7cc;
+}
+
+/* Contacto */
+.contacto {
+  background-color: #222;
+  padding: 40px 0;
+}
+
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacto input, .contacto textarea {
+  width: 60%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.contacto button {
+  background-color: #00C9FF;
+  padding: 10px 20px;
+  color: #111;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.contacto button:hover {
+  background-color: #00a7cc;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  color: #aaa;
+}
