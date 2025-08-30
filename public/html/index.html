@@ -7,59 +7,74 @@
   <link rel="stylesheet" href="../styles/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Orbitron&display=swap" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <img src="../assets/LevelUpLogo.png" alt="LevelUp logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="#productos">Productos</a></li>
-      </ul>
-    </nav>
-  </header>
+  <body>
+    <header>
+      <img src="../assets/LevelUpLogo.png" alt="LevelUp logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="#productos">Productos</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section id="productos" class="productos">
-    <h2>Productos</h2>
-    <div class="productos-grid">
-      <div class="producto-card">
-        <img src="https://via.placeholder.com/200" alt="Producto 1">
-        <h3>Producto 1</h3>
-        <p class="precio">$99.99</p>
-        <button class="btn-primary">Agregar al carrito</button>
+    <section id="productos" class="productos">
+      <h2>Productos</h2>
+      <div class="buscador">
+        <input type="text" id="search-bar" placeholder="Buscar producto...">
+        <select id="category-filter">
+          <option value="">Todas las categorías</option>
+          <option value="Juegos de Mesa">Juegos de Mesa</option>
+          <option value="Accesorios">Accesorios</option>
+          <option value="Consolas">Consolas</option>
+          <option value="Computadores Gamers">Computadores Gamers</option>
+          <option value="Sillas Gamers">Sillas Gamers</option>
+          <option value="Mouse">Mouse</option>
+          <option value="Mousepad">Mousepad</option>
+          <option value="Poleras Personalizadas">Poleras Personalizadas</option>
+          <option value="Polerones Gamers Personalizados">Polerones Gamers Personalizados</option>
+        </select>
       </div>
-      <div class="producto-card">
-        <img src="https://via.placeholder.com/200" alt="Producto 2">
-        <h3>Producto 2</h3>
-        <p class="precio">$99.99</p>
-        <button class="btn-primary">Agregar al carrito</button>
+      <div class="productos-grid">
+        <div class="producto-card" data-category="Juegos de Mesa">
+          <img src="https://via.placeholder.com/200" alt="Producto 1">
+          <h3>Producto 1</h3>
+          <p class="precio texto-secundario">$99.99</p>
+          <button class="btn-primary">Agregar al carrito</button>
+        </div>
+        <div class="producto-card" data-category="Accesorios">
+          <img src="https://via.placeholder.com/200" alt="Producto 2">
+          <h3>Producto 2</h3>
+          <p class="precio texto-secundario">$99.99</p>
+          <button class="btn-primary">Agregar al carrito</button>
+        </div>
+        <div class="producto-card" data-category="Consolas">
+          <img src="https://via.placeholder.com/200" alt="Producto 3">
+          <h3>Producto 3</h3>
+          <p class="precio texto-secundario">$99.99</p>
+          <button class="btn-primary">Agregar al carrito</button>
+        </div>
+        <div class="producto-card" data-category="Computadores Gamers">
+          <img src="https://via.placeholder.com/200" alt="Producto 4">
+          <h3>Producto 4</h3>
+          <p class="precio texto-secundario">$99.99</p>
+          <button class="btn-primary">Agregar al carrito</button>
+        </div>
+        <div class="producto-card" data-category="Sillas Gamers">
+          <img src="https://via.placeholder.com/200" alt="Producto 5">
+          <h3>Producto 5</h3>
+          <p class="precio texto-secundario">$99.99</p>
+          <button class="btn-primary">Agregar al carrito</button>
+        </div>
+        <div class="producto-card" data-category="Mouse">
+          <img src="https://via.placeholder.com/200" alt="Producto 6">
+          <h3>Producto 6</h3>
+          <p class="precio texto-secundario">$99.99</p>
+          <button class="btn-primary">Agregar al carrito</button>
+        </div>
       </div>
-      <div class="producto-card">
-        <img src="https://via.placeholder.com/200" alt="Producto 3">
-        <h3>Producto 3</h3>
-        <p class="precio">$99.99</p>
-        <button class="btn-primary">Agregar al carrito</button>
-      </div>
-      <div class="producto-card">
-        <img src="https://via.placeholder.com/200" alt="Producto 4">
-        <h3>Producto 4</h3>
-        <p class="precio">$99.99</p>
-        <button class="btn-primary">Agregar al carrito</button>
-      </div>
-      <div class="producto-card">
-        <img src="https://via.placeholder.com/200" alt="Producto 5">
-        <h3>Producto 5</h3>
-        <p class="precio">$99.99</p>
-        <button class="btn-primary">Agregar al carrito</button>
-      </div>
-      <div class="producto-card">
-        <img src="https://via.placeholder.com/200" alt="Producto 6">
-        <h3>Producto 6</h3>
-        <p class="precio">$99.99</p>
-        <button class="btn-primary">Agregar al carrito</button>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-  </footer>
-</body>
+    </section>
+    <footer>
+    </footer>
+    <script src="../js/index.js"></script>
+  </body>
 </html>
