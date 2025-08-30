@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('search-bar');
   const categorySelect = document.getElementById('category-filter');
   const cards = document.querySelectorAll('.producto-card');
+  const viewMoreButtons = document.querySelectorAll('.ver-mas');
 
   function filterProducts() {
     const searchTerm = searchInput.value.trim().toLowerCase();
@@ -18,6 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  viewMoreButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const description = btn.previousElementSibling;
+      description.classList.toggle('expandida');
+      btn.textContent = description.classList.contains('expandida') ? 'ver menos' : 'ver más';
+    });
+  });
+  
   searchInput.addEventListener('input', filterProducts);
   categorySelect.addEventListener('change', filterProducts);
 });
