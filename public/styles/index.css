@@ -103,6 +103,24 @@ header nav ul li a:hover {
   margin: 20px 0;
 }
 
+.producto-card .descripcion {
+  margin-bottom: 10px;
+  color: #D3D3D3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.producto-card .ver-mas {
+  color: #1E90FF;
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
 .producto-card .precio {
   font-size: 18px;
   font-weight: bold;
