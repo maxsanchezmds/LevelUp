@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - LevelUp</title>
+  <link rel="stylesheet" href="../styles/login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="../assets/LevelUpLogo.png" alt="LevelUp logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="login">
+    <h2>Iniciar Sesión</h2>
+    <form id="login-form">
+      <label for="correo">Correo</label>
+      <input type="email" id="correo" name="correo" required>
+
+      <label for="contrasena">Contraseña</label>
+      <input type="password" id="contrasena" name="contrasena" required>
+
+      <button type="submit" class="btn-primary">Iniciar sesión</button>
+      <p id="mensaje-error" class="mensaje-error"></p>
+    </form>
+  </section>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>
