@@ -66,6 +66,7 @@ header nav ul li a:hover {
 
 .btn-primary:hover {
   background-color: #39FF14;
+  color: #000;
 }
 
 /* Banner principal */
