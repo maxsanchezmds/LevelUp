@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - LevelUp</title>
+  <link rel="stylesheet" href="../styles/registro.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="../assets/LevelUpLogo.png" alt="LevelUp logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="registro">
+    <h2>Crear Cuenta</h2>
+    <form id="registro-form">
+      <label for="nombreCompleto">Nombre completo</label>
+      <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+
+      <label for="correo">Correo</label>
+      <input type="email" id="correo" name="correo" required>
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="confirmPassword">Confirmar contraseña</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+      <label for="telefono">Teléfono (opcional)</label>
+      <input type="tel" id="telefono" name="telefono">
+
+      <label for="region">Región</label>
+      <select id="region" name="region" required>
+        <option value="">Selecciona una región</option>
+        <option value="Arica y Parinacota">Arica y Parinacota</option>
+        <option value="Tarapacá">Tarapacá</option>
+        <option value="Antofagasta">Antofagasta</option>
+        <option value="Atacama">Atacama</option>
+        <option value="Coquimbo">Coquimbo</option>
+        <option value="Valparaíso">Valparaíso</option>
+        <option value="Metropolitana">Metropolitana</option>
+        <option value="O'Higgins">O'Higgins</option>
+        <option value="Maule">Maule</option>
+        <option value="Ñuble">Ñuble</option>
+        <option value="Biobío">Biobío</option>
+        <option value="La Araucanía">La Araucanía</option>
+        <option value="Los Ríos">Los Ríos</option>
+        <option value="Los Lagos">Los Lagos</option>
+        <option value="Aysén">Aysén</option>
+        <option value="Magallanes">Magallanes</option>
+      </select>
+
+      <label for="comuna">Comuna</label>
+      <select id="comuna" name="comuna" required>
+        <option value="">Selecciona una comuna</option>
+        <option value="Santiago">Santiago</option>
+        <option value="Providencia">Providencia</option>
+        <option value="Las Condes">Las Condes</option>
+        <option value="Ñuñoa">Ñuñoa</option>
+        <option value="Puente Alto">Puente Alto</option>
+        <option value="Maipú">Maipú</option>
+        <option value="La Florida">La Florida</option>
+        <option value="Viña del Mar">Viña del Mar</option>
+        <option value="Valparaíso">Valparaíso</option>
+        <option value="Concepción">Concepción</option>
+      </select>
+
+      <button type="submit" class="btn-primary">Crear cuenta</button>
+    </form>
+  </section>
+
+  <script src="../js/registro.js"></script>
+</body>
+</html>
