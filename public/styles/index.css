@@ -8,15 +8,11 @@
 /* Estilos generales */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #111;
+  background-color: #000;
   color: #fff;
   line-height: 1.6;
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
 
 h1, h2, h3 {
   text-align: center;
@@ -25,8 +21,9 @@ h1, h2, h3 {
 
 /* Header */
 header {
-  background-color: #222;
+  background-color: #000;
   padding: 20px 0;
+  text-align: center;
 }
 
 header .logo {
@@ -46,46 +43,28 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: #fff;
+  color: #1E90FF;
   text-decoration: none;
   font-weight: bold;
 }
 
 header nav ul li a:hover {
-  color: #00C9FF;
+  color: #39FF14;
 }
 
-/* Hero Section */
-.hero {
-  background: url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 50px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.hero .btn-primary {
-  background-color: #00C9FF;
+.btn-primary {
+  background-color: #1E90FF;
   padding: 10px 20px;
-  color: #111;
+  color: #000;
   text-decoration: none;
   font-weight: bold;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
-.hero .btn-primary:hover {
-  background-color: #00a7cc;
+.btn-primary:hover {
+  background-color: #39FF14;
 }
 
 /* Productos */
@@ -96,13 +75,13 @@ header nav ul li a:hover {
 
 .productos-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px 0;
 }
 
 .producto-card {
-  background-color: #333;
+  background-color: #111;
   padding: 20px;
   text-align: center;
   border-radius: 10px;
@@ -126,77 +105,12 @@ header nav ul li a:hover {
 .producto-card .precio {
   font-size: 18px;
   font-weight: bold;
-}
-
-.producto-card .btn-secundario {
-  background-color: #00C9FF;
-  padding: 10px 20px;
-  color: #111;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
-.producto-card .btn-secundario:hover {
-  background-color: #00a7cc;
-}
-
-/* Ofertas */
-.ofertas {
-  background-color: #111;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.ofertas .btn-primary {
-  background-color: #00C9FF;
-  padding: 10px 20px;
-  color: #111;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
-.ofertas .btn-primary:hover {
-  background-color: #00a7cc;
-}
-
-/* Contacto */
-.contacto {
-  background-color: #222;
-  padding: 40px 0;
-}
-
-.contacto form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contacto input, .contacto textarea {
-  width: 60%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: none;
-}
-
-.contacto button {
-  background-color: #00C9FF;
-  padding: 10px 20px;
-  color: #111;
-  border: none;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
-.contacto button:hover {
-  background-color: #00a7cc;
+  margin-bottom: 10px;
 }
 
 /* Footer */
 footer {
-  background-color: #111;
+  background-color: #000;
   padding: 20px 0;
   text-align: center;
 }
