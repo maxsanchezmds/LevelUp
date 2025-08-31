@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Control</title>
+  <link rel="stylesheet" href="../styles/panelControl.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="../assets/LevelUpLogo.png" alt="LevelUp logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="panel-container">
+    <aside class="sidebar">
+      <button id="btn-ordenes" class="btn-primary">Órdenes de compra</button>
+      <button id="btn-usuarios" class="btn-primary">Usuarios</button>
+      <button id="btn-stock" class="btn-primary">Stock</button>
+    </aside>
+    <main class="panel-content">
+      <section id="section-ordenes" class="panel-section"></section>
+      <section id="section-usuarios" class="panel-section hidden">
+        <h2>Usuarios</h2>
+        <div id="usuarios-list"></div>
+        <h3>Crear nuevo usuario</h3>
+        <form id="form-usuario" class="formulario">
+          <input type="text" name="nombreCompleto" placeholder="Nombre completo" required>
+          <input type="email" name="correo" placeholder="Correo" required>
+          <input type="password" name="contrasena" placeholder="Contraseña" required>
+          <input type="text" name="telefono" placeholder="Teléfono" required>
+          <input type="text" name="region" placeholder="Región" required>
+          <input type="text" name="comuna" placeholder="Comuna" required>
+          <button type="submit" class="btn-primary">Agregar usuario</button>
+        </form>
+      </section>
+      <section id="section-stock" class="panel-section hidden">
+        <h2>Stock de productos</h2>
+        <div id="stock-list"></div>
+        <h3>Crear nuevo producto</h3>
+        <form id="form-producto" class="formulario">
+          <input type="text" name="nombre" placeholder="Nombre" required>
+          <textarea name="descripcion" placeholder="Descripción" required></textarea>
+          <input type="number" name="precio" placeholder="Precio" required>
+          <input type="number" name="stock" placeholder="Stock" required>
+          <button type="submit" class="btn-primary">Agregar producto</button>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="../js/panelControl.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>
