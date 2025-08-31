@@ -122,14 +122,35 @@ function renderUsuarios() {
 function renderProductos() {
   const lista = document.getElementById('stock-list');
   const productos = cargarProductos();
-  let html = '<table class="table"><thead><tr><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Stock</th></tr></thead><tbody>';
-  productos.forEach(p => {
+  let html = '<table class="table"><thead><tr><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Stock</th><th>Acciones</th></tr></thead><tbody>';
+  productos.forEach((p, idx) => {
     const stockMap = JSON.parse(localStorage.getItem('productStock')) || {};
     const stock = stockMap[p.nombre] ?? p.stock;
-    html += `<tr><td>${p.nombre}</td><td>${p.descripcion}</td><td>$${p.precio.toLocaleString('es-CL')}</td><td>${stock}</td></tr>`;
+    html += `<tr>
+      <td>${p.nombre}</td>
+      <td>${p.descripcion}</td>
+      <td><input type="number" id="precio-${idx}" class="input-number" value="${p.precio}"></td>
+      <td><input type="number" id="stock-${idx}" class="input-number" value="${stock}"></td>
+      <td><button class="btn-primary btn-guardar" data-index="${idx}">Guardar</button></td>
+    </tr>`;
   });
   html += '</tbody></table>';
   lista.innerHTML = html;
+  lista.querySelectorAll('.btn-guardar').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const idx = parseInt(e.target.dataset.index, 10);
+      const precio = parseInt(document.getElementById(`precio-${idx}`).value, 10);
+      const stock = parseInt(document.getElementById(`stock-${idx}`).value, 10);
+      const productos = cargarProductos();
+      const stockMap = JSON.parse(localStorage.getItem('productStock')) || {};
+      productos[idx].precio = precio;
+      productos[idx].stock = stock;
+      stockMap[productos[idx].nombre] = stock;
+      guardarProductos(productos);
+      localStorage.setItem('productStock', JSON.stringify(stockMap));
+      renderProductos();
+    });
+  });
 }
 
 function initForms() {
