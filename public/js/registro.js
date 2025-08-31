@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('registro-form');
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const password = form.password.value;
@@ -23,13 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
-      await fetch('/json/usuario.json', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(userData, null, 2)
-      });
+      const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+      usuarios.push(userData);
+      localStorage.setItem('usuarios', JSON.stringify(usuarios));
       window.location.href = 'index.html';
     } catch (err) {
       console.error('Error al registrar usuario:', err);
