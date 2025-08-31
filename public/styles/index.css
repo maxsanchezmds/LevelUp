@@ -136,6 +136,17 @@ header nav ul li a:hover {
   color: #D3D3D3;
 }
 
+.producto-card .cantidad {
+  width: 60px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #111;
+  color: #FFFFFF;
+  text-align: center;
+}
+
 /* Footer */
 footer {
   background-color: #000;
@@ -174,4 +185,33 @@ footer p {
   border-radius: 5px;
   background-color: #111;
   color: #FFFFFF;
+}
+
+/* Icono del carrito */
+.cart-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #1E90FF;
+  color: #000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 24px;
+  z-index: 100;
+}
+
+.cart-button span {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #39FF14;
+  color: #000;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 14px;
 }

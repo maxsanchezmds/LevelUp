@@ -26,7 +26,34 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.textContent = description.classList.contains('expandida') ? 'ver menos' : 'ver más';
     });
   });
-  
+
+  // ----- Carrito de compras -----
+  const productCards = document.querySelectorAll('.producto-card');
+  productCards.forEach(card => {
+    const addButton = card.querySelector('.btn-primary');
+    const quantityInput = card.querySelector('.cantidad');
+
+    addButton.addEventListener('click', () => {
+      const name = card.querySelector('h3').textContent.trim();
+      const price = parseInt(card.querySelector('.precio').textContent.replace(/[^0-9]/g, ''), 10);
+      const description = card.querySelector('.descripcion').textContent.trim();
+      const image = card.querySelector('img').getAttribute('src');
+      const quantity = parseInt(quantityInput.value, 10);
+
+      let cart = getCart();
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.quantity += quantity;
+      } else {
+        cart.push({ name, price, quantity, description, image });
+      }
+      saveCart(cart);
+      updateCartIcon();
+    });
+  });
+
+
   searchInput.addEventListener('input', filterProducts);
   categorySelect.addEventListener('change', filterProducts);
+  updateCartIcon();
 });

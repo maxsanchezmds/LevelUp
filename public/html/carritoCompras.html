@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi carrito de compras</title>
+  <link rel="stylesheet" href="../styles/carritoCompras.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="../assets/LevelUpLogo.png" alt="LevelUp logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html#productos">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html" class="btn-primary">Iniciar sesión</a></li>
+        <li><a href="registro.html" class="btn-primary">Registrarse</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <a href="carritoCompras.html" id="cart-icon" class="cart-button">
+    🛒<span id="cart-count"></span>
+  </a>
+
+  <section class="carrito">
+    <h2>Mi carrito de compras</h2>
+    <div id="cart-items"></div>
+    <div id="cart-summary">
+      <p>Total a pagar: $<span id="total">0</span></p>
+    </div>
+  </section>
+
+  <footer>
+  </footer>
+  <script src="../js/cart.js"></script>
+  <script src="../js/carritoCompras.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>
