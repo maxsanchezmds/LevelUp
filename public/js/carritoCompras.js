@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+  if (!isUserLoggedIn()) {
+    window.location.href = 'login.html';
+    return;
+  }
   const itemsContainer = document.getElementById('cart-items');
   const totalElement = document.getElementById('total');
 

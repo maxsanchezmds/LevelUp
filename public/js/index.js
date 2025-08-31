@@ -34,6 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const quantityInput = card.querySelector('.cantidad');
 
     addButton.addEventListener('click', () => {
+      if (!isUserLoggedIn()) {
+        alert('Debes iniciar sesión para agregar productos al carrito.');
+        window.location.href = 'login.html';
+        return;
+      }
       const name = card.querySelector('h3').textContent.trim();
       const price = parseInt(card.querySelector('.precio').textContent.replace(/[^0-9]/g, ''), 10);
       const description = card.querySelector('.descripcion').textContent.trim();
