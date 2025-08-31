@@ -136,11 +136,37 @@ header nav ul li a:hover {
   color: #D3D3D3;
 }
 
-.producto-card .cantidad {
-  width: 60px;
-  padding: 5px;
+.producto-card .stock {
   margin-bottom: 10px;
+  color: #D3D3D3;
+}
+
+.quantity-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.quantity-btn {
+  background-color: #1E90FF;
   border: none;
+  color: #000;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quantity-btn:hover {
+  background-color: #39FF14;
+}
+
+.producto-card .cantidad {
+  width: 50px;
+  padding: 5px;
+  margin: 0 10px;
+  border: 1px solid #1E90FF;
   border-radius: 5px;
   background-color: #111;
   color: #FFFFFF;
