@@ -4,8 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    const correo = form.correo.value.trim();
+
     const password = form.password.value;
     const confirmPassword = form.confirmPassword.value;
+
+    const emailRegex = /^[\w.-]+@(duoc\.cl|profesor\.duoc\.cl|gmail(?:\.com)?)$/i;
+    if (correo.length > 100 || !emailRegex.test(correo)) {
+      alert('El correo debe tener máximo 100 caracteres y ser @duoc.cl, @profesor.duoc.cl o @gmail');
+      return;
+    }
+    if (password.length < 4 || password.length > 10) {
+      alert('La contraseña debe tener entre 4 y 10 caracteres');
+      return;
+    }
 
     if (password !== confirmPassword) {
       alert('Las contraseñas no coinciden');
@@ -14,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const userData = {
       nombreCompleto: form.nombreCompleto.value,
-      correo: form.correo.value,
+      correo: correo,
       contrasena: password,
       telefono: form.telefono.value,
       region: form.region.value,
