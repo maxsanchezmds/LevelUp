@@ -10,7 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
   if (usuarioActivo) {
     if (loginItem) loginItem.remove();
     if (registroItem) registroItem.remove();
-
+    if (
+      usuarioActivo.rol === 'admin' ||
+      usuarioActivo.rol === 'vendedor' ||
+      usuarioActivo.correo === 'admin@admin.com' ||
+      usuarioActivo.correo === 'vendedor@vendedor.com'
+    ) {
+      const panelLi = document.createElement('li');
+      const panelBtn = document.createElement('a');
+      panelBtn.href = 'panelControl.html';
+      panelBtn.textContent = 'Panel de Control';
+      panelBtn.classList.add('btn-primary');
+      panelLi.appendChild(panelBtn);
+      navList.appendChild(panelLi);
+    }
     const userLi = document.createElement('li');
     const nameSpan = document.createElement('span');
     nameSpan.textContent = usuarioActivo.nombreCompleto;
