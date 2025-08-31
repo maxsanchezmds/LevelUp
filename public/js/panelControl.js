@@ -111,12 +111,21 @@ function renderUsuarios() {
     lista.innerHTML = '<p>No hay usuarios registrados.</p>';
     return;
   }
-  let html = '<table class="table"><thead><tr><th>Nombre</th><th>Correo</th><th>Contraseña</th><th>Teléfono</th><th>Región</th><th>Comuna</th></tr></thead><tbody>';
-  usuarios.forEach(u => {
-    html += `<tr><td>${u.nombreCompleto || ''}</td><td>${u.correo || ''}</td><td>${u.contrasena || ''}</td><td>${u.telefono || ''}</td><td>${u.region || ''}</td><td>${u.comuna || ''}</td></tr>`;
+  let html = '<table class="table"><thead><tr><th>Nombre</th><th>Correo</th><th>Contraseña</th><th>Teléfono</th><th>Región</th><th>Comuna</th><th>Acciones</th></tr></thead><tbody>';
+  usuarios.forEach((u, idx) => {
+    html += `<tr><td>${u.nombreCompleto || ''}</td><td>${u.correo || ''}</td><td>${u.contrasena || ''}</td><td>${u.telefono || ''}</td><td>${u.region || ''}</td><td>${u.comuna || ''}</td><td><button class="btn-primary btn-eliminar-usuario" data-index="${idx}">Eliminar</button></td></tr>`;
   });
   html += '</tbody></table>';
   lista.innerHTML = html;
+  lista.querySelectorAll('.btn-eliminar-usuario').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const idx = parseInt(e.target.dataset.index, 10);
+      const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+      usuarios.splice(idx, 1);
+      localStorage.setItem('usuarios', JSON.stringify(usuarios));
+      renderUsuarios();
+    });
+  });
 }
 
 function renderProductos() {
@@ -131,7 +140,8 @@ function renderProductos() {
       <td>${p.descripcion}</td>
       <td><input type="number" id="precio-${idx}" class="input-number" value="${p.precio}"></td>
       <td><input type="number" id="stock-${idx}" class="input-number" value="${stock}"></td>
-      <td><button class="btn-primary btn-guardar" data-index="${idx}">Guardar</button></td>
+      <td><button class="btn-primary btn-guardar" data-index="${idx}">Guardar</button>
+      <button class="btn-primary btn-eliminar-producto" data-index="${idx}">Eliminar</button></td>
     </tr>`;
   });
   html += '</tbody></table>';
@@ -147,6 +157,19 @@ function renderProductos() {
       productos[idx].stock = stock;
       stockMap[productos[idx].nombre] = stock;
       guardarProductos(productos);
+      localStorage.setItem('productStock', JSON.stringify(stockMap));
+      renderProductos();
+    });
+  });
+  lista.querySelectorAll('.btn-eliminar-producto').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const idx = parseInt(e.target.dataset.index, 10);
+      const productos = cargarProductos();
+      const nombre = productos[idx].nombre;
+      productos.splice(idx, 1);
+      guardarProductos(productos);
+      const stockMap = JSON.parse(localStorage.getItem('productStock')) || {};
+      delete stockMap[nombre];
       localStorage.setItem('productStock', JSON.stringify(stockMap));
       renderProductos();
     });
