@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const usuarioValido = usuarios.find(user => user.correo === correo && user.contrasena === contrasena);
     if (usuarioValido) {
+      usuarios.forEach(u => u.sesionActiva = false);
+      usuarioValido.sesionActiva = true;
+      localStorage.setItem('usuarios', JSON.stringify(usuarios));
       window.location.href = 'index.html';
     } else {
       mensajeError.textContent = 'Datos incorrectos.';
