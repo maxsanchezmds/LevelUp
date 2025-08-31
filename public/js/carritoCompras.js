@@ -70,6 +70,35 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCart();
       }
     });
+    
+    const confirmBtn = document.getElementById('confirmar-compra');
+    confirmBtn.addEventListener('click', () => {
+        const cart = getCart();
+        if (cart.length === 0) {
+            alert('El carrito está vacío');
+            return;
+        }
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        const cliente = usuarios.find(u => u.sesionActiva);
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        const ordenes = JSON.parse(localStorage.getItem('ordenes')) || [];
+        const clienteInfo = cliente ? {
+            nombreCompleto: cliente.nombreCompleto,
+            correo: cliente.correo,
+            telefono: cliente.telefono,
+            region: cliente.region,
+            comuna: cliente.comuna
+        } : {};
+        ordenes.push({
+            cliente: clienteInfo,
+            items: cart.map(item => ({ ...item })),
+            total
+        });
+        localStorage.setItem('ordenes', JSON.stringify(ordenes));
+        alert('Se ha realizado con éxito tu compra, pronto te llegará a tu casa');
+        saveCart([]);
+        renderCart();
+    });
 
     renderCart();
 });
