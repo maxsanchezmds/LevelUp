@@ -18,6 +18,33 @@ function saveCart(cart) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+// ----- Gestión de stock -----
+const DEFAULT_STOCK = 10;
+window.DEFAULT_STOCK = DEFAULT_STOCK;
+
+function getProductStock() {
+  return JSON.parse(localStorage.getItem('productStock')) || {};
+}
+
+function saveProductStock(stock) {
+  localStorage.setItem('productStock', JSON.stringify(stock));
+}
+
+function getAvailableStock(name) {
+  const stock = getProductStock();
+  return stock[name] || 0;
+}
+
+function adjustProductStock(name, delta) {
+  const stock = getProductStock();
+  const current = stock[name] === undefined ? DEFAULT_STOCK : stock[name];
+  const updated = Math.max(0, current + delta);
+  stock[name] = updated;
+  saveProductStock(stock);
+  return updated;
+}
+
+
 function updateCartIcon() {
   const icon = document.getElementById('cart-icon');
   const countSpan = document.getElementById('cart-count');
