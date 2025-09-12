@@ -3,193 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LevelUp - Tienda Gamer - EDITADO POR BASTIAN 2024</title>
+  <title>LevelUp - Tienda Gamer</title>
   <link rel="stylesheet" href="../styles/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Orbitron&display=swap" rel="stylesheet">
 </head>
-  <body>
-    <header>
-      <img src="../assets/LevelUpLogo.png" alt="LevelUp logo" class="logo">
-      <nav>
-        <ul>
+<body>
+  <header>
+    <img src="../assets/LevelUpLogo.png" alt="LevelUp logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html" class="btn-primary">Iniciar sesión</a></li>
+        <li><a href="registro.html" class="btn-primary">Registrarse</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <a href="carritoCompras.html" id="cart-icon" class="cart-button">
+    🛒<span id="cart-count"></span>
+  </a>
+
+  <section id="productos" class="productos">
+    <h2>Productos</h2>
+    <div class="buscador">
+      <input type="text" id="search-bar" placeholder="Buscar producto...">
+      <select id="category-filter">
+        <option value="">Todas las categorías</option>
+        <option value="Juegos de Mesa">Juegos de Mesa</option>
+        <option value="Accesorios">Accesorios</option>
+        <option value="Consolas">Consolas</option>
+        <option value="Computadores Gamers">Computadores Gamers</option>
+        <option value="Sillas Gamers">Sillas Gamers</option>
+        <option value="Mouse">Mouse</option>
+        <option value="Mousepad">Mousepad</option>
+        <option value="Poleras Personalizadas">Poleras Personalizadas</option>
+        <option value="Polerones Gamers Personalizados">Polerones Gamers Personalizados</option>
+      </select>
+    </div>
+
+    <div class="productos-grid">
+      <div class="producto-card" data-category="Juegos de Mesa">
+        <img src="../assets/imgsProductos/Catan.png" alt="Producto 1">
+        <h3>Catan</h3>
+        <p class="descripcion texto-secundario">Catan: Un clásico juego de estrategia donde los jugadores compiten por colonizar y expandirse en la isla de Catan. Ideal para 3-4 jugadores y perfecto para noches de juego en familia o con amigos.</p>
+        <span class="ver-mas texto-secundario">ver más</span>
+        <p class="precio texto-secundario">$29.990</p>
+        <p class="stock texto-secundario">Stock: 10</p>
+        <div class="quantity-selector">
+          <button class="quantity-btn decrease">-</button>
+          <input type="number" class="cantidad" value="1" min="1">
+          <button class="quantity-btn increase">+</button>
+        </div>
+        <button class="btn-primary">Agregar al carrito</button>
+      </div>
+
+      <div class="producto-card" data-category="Juegos de Mesa">
+        <img src="../assets/imgsProductos/Carcassonne.png" alt="Producto 2">
+        <h3>Carcassonne</h3>
+        <p class="descripcion texto-secundario">Carcassonne: Un juego de colocación de fichas donde los jugadores construyen el paisaje alrededor de la fortaleza medieval de Carcassonne. Ideal para 2-5 jugadores y fácil de aprender.</p>
+        <span class="ver-mas texto-secundario">ver más</span>
+        <p class="precio texto-secundario">$24.990</p>
+        <p class="stock texto-secundario">Stock: 10</p>
+        <div class="quantity-selector">
+          <button class="quantity-btn decrease">-</button>
+          <input type="number" class="cantidad" value="1" min="1">
+          <button class="quantity-btn increase">+</button>
+        </div>
+        <button class="btn-primary">Agregar al carrito</button>
+      </div>
+
+      <div class="producto-card" data-category="Accesorios">
+        <img src="../assets/imgsProductos/Control Xbox.png" alt="Producto 3">
+        <h3>Controlador Inalámbrico Xbox Series X</h3>
+        <p class="descripcion texto-secundario">Controlador Inalámbrico Xbox Series X: Ofrece una experiencia de juego cómoda con botones mapeables y una respuesta táctil mejorada. Compatible con consolas Xbox y PC.</p>
+        <span class="ver-mas texto-secundario">ver más</span>
+        <p class="precio texto-secundario">$59.990</p>
+        <p class="stock texto-secundario">Stock: 10</p>
+        <div class="quantity-selector">
+          <button class="quantity-btn decrease">-</button>
+          <input type="number" class="cantidad" value="1" min="1">
+          <button class="quantity-btn increase">+</button>
+        </div>
+        <button class="btn-primary">Agregar al carrito</button>
+      </div>
+
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__col">
+        <h2 class="footer__logo">LEVEL UP</h2>
+        <p class="footer__tagline">Tu tienda gamer desde 2025.</p>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__title">Enlaces rápidos</h3>
+        <ul class="footer__list">
           <li><a href="#productos">Productos</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="login.html" class="btn-primary">Iniciar sesión</a></li>
-          <li><a href="registro.html" class="btn-primary">Registrarse</a></li>
         </ul>
-      </nav>
-    </header>
-
-    <a href="carritoCompras.html" id="cart-icon" class="cart-button">
-      🛒<span id="cart-count"></span>
-    </a>
-
-    <section id="productos" class="productos">
-      <h2>Productos</h2>
-      <div class="buscador">
-        <input type="text" id="search-bar" placeholder="Buscar producto...">
-        <select id="category-filter">
-          <option value="">Todas las categorías</option>
-          <option value="Juegos de Mesa">Juegos de Mesa</option>
-          <option value="Accesorios">Accesorios</option>
-          <option value="Consolas">Consolas</option>
-          <option value="Computadores Gamers">Computadores Gamers</option>
-          <option value="Sillas Gamers">Sillas Gamers</option>
-          <option value="Mouse">Mouse</option>
-          <option value="Mousepad">Mousepad</option>
-          <option value="Poleras Personalizadas">Poleras Personalizadas</option>
-          <option value="Polerones Gamers Personalizados">Polerones Gamers Personalizados</option>
-        </select>
       </div>
-      <div class="productos-grid">
-        <div class="producto-card" data-category="Juegos de Mesa">
-          <img src="../assets/imgsProductos/Catan.png" alt="Producto 1">
-          <h3>Catan</h3>
-          <p class="descripcion texto-secundario">Catan: Un clásico juego de estrategia donde los jugadores compiten por colonizar y expandirse en la isla de Catan. Ideal para 3-4 jugadores y perfecto para noches de juego en familia o con amigos.</p>
-          <span class="ver-mas texto-secundario">ver más</span>
-          <p class="precio texto-secundario">$29.990</p>
-          <p class="stock texto-secundario">Stock: 10</p>
-          <div class="quantity-selector">
-            <button class="quantity-btn decrease">-</button>
-            <input type="number" class="cantidad" value="1" min="1">
-            <button class="quantity-btn increase">+</button>
-          </div>
-          <button class="btn-primary">Agregar al carrito</button>
-        </div>
-        <div class="producto-card" data-category="Juegos de Mesa">
-          <img src="../assets/imgsProductos/Carcassonne.png" alt="Producto 2">
-          <h3>Carcassonne</h3>
-          <p class="descripcion texto-secundario">Carcassonne: Un juego de colocación de fichas donde los jugadores construyen el paisaje alrededor de la fortaleza medieval de Carcassonne. Ideal para 2-5 jugadores y fácil de aprender.</p>
-          <span class="ver-mas texto-secundario">ver más</span>
-          <p class="precio texto-secundario">$24.990</p>
-          <p class="stock texto-secundario">Stock: 10</p>
-          <div class="quantity-selector">
-            <button class="quantity-btn decrease">-</button>
-            <input type="number" class="cantidad" value="1" min="1">
-            <button class="quantity-btn increase">+</button>
-          </div>
-          <button class="btn-primary">Agregar al carrito</button>
-        </div>
-        <div class="producto-card" data-category="Accesorios">
-          <img src="../assets/imgsProductos/Control Xbox.png" alt="Producto 3">
-          <h3>Controlador Inalámbrico Xbox Series X</h3>
-          <p class="descripcion texto-secundario">Controlador Inalámbrico Xbox Series X: Ofrece una experiencia de juego cómoda con botones mapeables y una respuesta táctil mejorada. Compatible con consolas Xbox y PC.</p>
-          <span class="ver-mas texto-secundario">ver más</span>
-          <p class="precio texto-secundario">$59.990</p>
-          <p class="stock texto-secundario">Stock: 10</p>
-          <div class="quantity-selector">
-            <button class="quantity-btn decrease">-</button>
-            <input type="number" class="cantidad" value="1" min="1">
-            <button class="quantity-btn increase">+</button>
-          </div>
-          <button class="btn-primary">Agregar al carrito</button>
-        </div>
-        <div class="producto-card" data-category="Accesorios">
-          <img src="../assets/imgsProductos/Audifono Hyper X.png" alt="Producto 4">
-          <h3>Auriculares Gamer HyperX Cloud II </h3>
-          <p class="descripcion texto-secundario">Auriculares Gamer HyperX Cloud II: Proporcionan un sonido envolvente de calidad con un micrófono desmontable y almohadillas de espuma viscoelástica para mayor comodidad durante largas sesiones de juego.</p>
-          <span class="ver-mas texto-secundario">ver más</span>
-          <p class="precio texto-secundario">$79.990</p>
-          <p class="stock texto-secundario">Stock: 10</p>
-          <div class="quantity-selector">
-            <button class="quantity-btn decrease">-</button>
-            <input type="number" class="cantidad" value="1" min="1">
-            <button class="quantity-btn increase">+</button>
-          </div>
-          <button class="btn-primary">Agregar al carrito</button>
-        </div>
-        <div class="producto-card" data-category="Consolas">
-          <img src="../assets/imgsProductos/PlayStation5.png" alt="Producto 5">
-          <h3>PlayStation 5</h3>
-          <p class="descripcion texto-secundario">PlayStation 5: La consola de última generación de Sony, que ofrece gráficos impresionantes y tiempos de carga ultrarrápidos para una experiencia de juego inmersiva.</p>
-          <span class="ver-mas texto-secundario">ver más</span>
-          <p class="precio texto-secundario">$549.990</p>
-          <p class="stock texto-secundario">Stock: 10</p>
-          <div class="quantity-selector">
-            <button class="quantity-btn decrease">-</button>
-            <input type="number" class="cantidad" value="1" min="1">
-            <button class="quantity-btn increase">+</button>
-          </div>
-          <button class="btn-primary">Agregar al carrito</button>
-        </div>
-        <div class="producto-card" data-category="Computadores Gamers">
-          <img src="../assets/imgsProductos/Rog Strix.png" alt="Producto 6">
-          <h3>PC Gamer ASUS ROG Strix </h3>
-          <p class="descripcion texto-secundario">PC Gamer ASUS ROG Strix: Un potente equipo diseñado para los gamers más exigentes, equipado con los últimos componentes para ofrecer un rendimiento excepcional en cualquier juego.</p>
-          <span class="ver-mas texto-secundario">ver más</span>
-          <p class="precio texto-secundario">$1.299.990</p>
-          <p class="stock texto-secundario">Stock: 10</p>
-          <div class="quantity-selector">
-            <button class="quantity-btn decrease">-</button>
-            <input type="number" class="cantidad" value="1" min="1">
-            <button class="quantity-btn increase">+</button>
-          </div>
-          <button class="btn-primary">Agregar al carrito</button>
-        </div>
-        <div class="producto-card" data-category="Sillas Gamers">
-          <img src="../assets/imgsProductos/Silla Gamer.png" alt="Producto 7">
-          <h3>Silla Gamer Secretlab Titan</h3>
-          <p class="descripcion texto-secundario">Silla Gamer Secretlab Titan: Diseñada para el máximo confort, esta silla ofrece un soporte ergonómico y personalización ajustable para sesiones de juego prolongadas.</p>
-          <span class="ver-mas texto-secundario">ver más</span>
-          <p class="precio texto-secundario">$349.990</p>
-          <p class="stock texto-secundario">Stock: 10</p>
-          <div class="quantity-selector">
-            <button class="quantity-btn decrease">-</button>
-            <input type="number" class="cantidad" value="1" min="1">
-            <button class="quantity-btn increase">+</button>
-          </div>
-          <button class="btn-primary">Agregar al carrito</button>
-        </div>
-        <div class="producto-card" data-category="Mouse">
-          <img src="../assets/imgsProductos/Mouse Gamer.png" alt="Producto 8">
-          <h3>Mouse Gamer Logitech G502 HERO</h3>
-          <p class="descripcion texto-secundario">Mouse Gamer Logitech G502 HERO: Con sensor de alta precisión y botones personalizables, este mouse es ideal para gamers que buscan un control preciso y personalización.</p>
-          <span class="ver-mas texto-secundario">ver más</span>
-          <p class="precio texto-secundario">$49.990</p>
-          <p class="stock texto-secundario">Stock: 10</p>
-          <div class="quantity-selector">
-            <button class="quantity-btn decrease">-</button>
-            <input type="number" class="cantidad" value="1" min="1">
-            <button class="quantity-btn increase">+</button>
-          </div>
-          <button class="btn-primary">Agregar al carrito</button>
-        </div>
-        <div class="producto-card" data-category="Mousepad">
-          <img src="../assets/imgsProductos/MousePad.png" alt="Producto 9">
-          <h3>Mousepad Razer Goliathus Extended Chroma</h3>
-          <p class="descripcion texto-secundario">Mousepad Razer Goliathus Extended Chroma: Ofrece un área de juego amplia con iluminación RGB personalizable, asegurando una superficie suave y uniforme para el movimiento del mouse.</p>
-          <span class="ver-mas texto-secundario">ver más</span>
-          <p class="precio texto-secundario">$29.990</p>
-          <p class="stock texto-secundario">Stock: 10</p>
-          <div class="quantity-selector">
-            <button class="quantity-btn decrease">-</button>
-            <input type="number" class="cantidad" value="1" min="1">
-            <button class="quantity-btn increase">+</button>
-          </div>
-          <button class="btn-primary">Agregar al carrito</button>
-        </div>
-        <div class="producto-card" data-category="Poleras Personalizadas">
-          <img src="../assets/imgsProductos/Camisa LevelUp.png" alt="Producto 10">
-          <h3>Polera Gamer Personalizada 'Level-Up'</h3>
-          <p class="descripcion texto-secundario">Polera Gamer Personalizada 'Level-Up': Una camiseta cómoda y estilizada, con la posibilidad de personalizarla con tu gamer tag o diseño favorito.</p>
-          <span class="ver-mas texto-secundario">ver más</span>
-          <p class="precio texto-secundario">$14.990</p>
-          <p class="stock texto-secundario">Stock: 10</p>
-          <div class="quantity-selector">
-            <button class="quantity-btn decrease">-</button>
-            <input type="number" class="cantidad" value="1" min="1">
-            <button class="quantity-btn increase">+</button>
-          </div>
-          <button class="btn-primary">Agregar al carrito</button>
-        </div>
+      <div class="footer__col">
+        <h3 class="footer__title">Contacto</h3>
+        <ul class="footer__list">
+          <li>📍 Santiago, Chile</li>
+          <li>✉️ <a href="mailto:contacto@levelup.cl">contacto@levelup.cl</a></li>
+          <li>📞 <a href="tel:+56223456789">+56 2 2345 6789</a></li>
+        </ul>
       </div>
-    </section>
-    <footer>
-    </footer>
-    <script src="../js/index.js"></script>
-    <script src="../js/auth.js"></script>
-    <script src="../js/cart.js"></script>
-  </body>
+    </div>
+    <div class="footer__bottom">
+      © 2025 LEVEL UP. Todos los derechos reservados.
+    </div>
+  </footer>
+  <script src="../js/index.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/cart.js"></script>
+</body>
 </html>
